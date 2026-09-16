@@ -1,0 +1,76 @@
+---
+import Link from "@components/Link.astro";
+import { linkNavbar, socialNetworks, linkOthers } from "@data/links";
+---
+
+<footer id="contact" class="bg-footer-bg px-8 py-16 text-footer-muted md:grid">
+  <section class="grid grid-cols-1 gap-8 md:mb-8 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
+    <article>
+      <h2 class="mb-4 text-2xl font-bold text-footer-text uppercase">
+        Deli's Hots
+      </h2>
+      <p>Fast, fresh food with a taste of home.</p>
+
+      <ul class="my-4 flex gap-8">
+        {socialNetworks.map((link) => (
+          <li>
+            <Link
+              {...link}
+              className="rounded-full border border-text-muted p-3"
+            />
+          </li>
+        ))}
+      </ul>
+    </article>
+
+    <nav aria-label="footer links">
+      <h2 class="font-bold text-footer-text">Navigation</h2>
+      <ul class="flex flex-col items-start">
+        {linkNavbar.map((link) => (
+          <li>
+            <Link {...link} className="mt-4 block" />
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <article class="mt-8 md:mt-0">
+      <h2 class="mb-4 font-bold text-footer-text">Contacto</h2>
+
+      <address class="mb-4 text-sm">
+        Av. Los Robles #123, Managua, Nicaragua
+      </address>
+      <ul class="flex flex-col gap-4 text-sm">
+        <li>
+          <a href="tel:+50588880000">Tel: +505 8888 0000</a>
+        </li>
+        <li>
+          <a href="#">Mail: pedidos@delishots.com</a>
+        </li>
+      </ul>
+    </article>
+
+    <article class="my-8 md:mt-0">
+      <h2 class="mb-4 font-bold text-footer-text">Horario</h2>
+
+      <ul class="flex flex-col gap-4 text-sm">
+        <li>Lun – Vie · 10:00 am – 20:00 pm</li>
+        <li>Sáb – Dom · 8:00 pm – 22:00 pm</li>
+      </ul>
+    </article>
+  </section>
+
+  <article class="flex flex-col items-center gap-8 border-t border-footer-muted py-8 md:flex-row md:justify-between">
+    <nav aria-label="legal links">
+      <ul class="flex gap-12" role="list">
+        {linkOthers.map((link) => (
+          <li>
+            <Link url={link.url} label={link.label} />
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <small class="opacity-80">&copy; 14BryanEspinoza - 2026</small>
+  </article>
+</footer>
