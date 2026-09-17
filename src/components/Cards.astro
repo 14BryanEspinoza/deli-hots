@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  title: string;
+  description: string;
+  icon?: string;
+  className?: string;
+}
+
+const baseStyle =
+  "cursor-pointer rounded-md border border-border bg-surface p-8 transition hover:scale-105 hover:bg-surface-alt hover:shadow-md";
+
+const { title, description, icon, className } = Astro.props as Props;
+---
+
+<article class={`${baseStyle}`}>
+  {icon && (
+    <div class="mb-4 text-2xl text-text">
+      <Icon name={icon} class={className} />
+    </div>
+  )}
+
+  <h3 class="mb-4 font-bold text-text">{title}</h3>
+
+  <p class="text-sm text-text">{description}</p>
+</article>
