@@ -14,7 +14,7 @@ const { url, label, className, skip, icon, active } = Astro.props as Props;
 const baseStyle =
   "flex gap-2 items-center justify-center transition hover:scale-105 hover:text-accent-hover";
 const skipStyle =
-  "inline text-bg bg-danger absolute top-0 left-4 z-50 -translate-y-12 rounded-md px-6 py-1 transition-all focus:translate-y-4";
+  "absolute top-0 left-4 z-50 -translate-y-12 px-6 py-2 rounded-md font-bold text-text bg-accent-soft transition focus:translate-y-4";
 const activeStyle = "font-bold text-accent border-b-2 border-accent";
 ---
 
@@ -22,6 +22,6 @@ const activeStyle = "font-bold text-accent border-b-2 border-accent";
   href={url}
   class={`${skip ? skipStyle : baseStyle} ${className} ${active ? activeStyle : ""}`}
 >
-  {icon && <Icon name={icon} class="cursor-pointer text-xl" />}
+  {icon && <Icon name={icon} class="text-xl" />}
   {label}
 </a>

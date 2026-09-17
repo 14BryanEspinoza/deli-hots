@@ -8,9 +8,9 @@ import favicon from "@assets/favicon.png";
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-10 flex flex-wrap items-center justify-between bg-surface-alt p-4 shadow md:flex-nowrap md:px-12">
+<header class="sticky top-0 z-10 flex flex-wrap items-center justify-between px-6 py-3 text-text shadow md:flex-nowrap md:px-12">
   <figure class="size-12">
-    <a href="/">
+    <a href="/deli-hots/">
       <Picture
         src={favicon}
         alt="page logo"
@@ -36,7 +36,7 @@ const currentPath = Astro.url.pathname;
 
         return (
           <li>
-            <Link {...link} className="mt-8 block md:mt-0" active={isActive} />
+            <Link {...link} className="mt-12 md:mt-0" active={isActive} />
           </li>
         );
       })}
