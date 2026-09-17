@@ -1,0 +1,43 @@
+---
+import Link from "@components/Link.astro";
+import { ImageCarousel } from "@components/Carousel";
+import { data } from "@lib/api";
+
+const images = data.map((item) => ({
+  url: item.image,
+  alt: item.name,
+}));
+
+const carouselImages = images.slice(35, 59);
+---
+
+<section class="py-24 text-center text-text">
+  <h1 class="mb-4 text-4xl font-bold">Deli's Hots</h1>
+
+  <p class="mx-auto mb-6 max-w-2xl text-lg">
+    Fast food made with fresh ingredients and packed with flavor. Burgers,
+    pizzas, hot dogs, tacos, and more—ready in minutes and delivered hot to your
+    door.
+  </p>
+
+  <div class="flex flex-wrap justify-center gap-8">
+    <Link
+      url="/menu"
+      label="Go to menu"
+      icon="lucide:arrow-right"
+      className="rounded-md bg-accent p-4 font-bold text-bg hover:bg-accent-soft hover:text-text"
+    />
+    <Link
+      url="/orders"
+      label="Place an order now!"
+      icon="lucide:arrow-right"
+      className="rounded-md border border-border p-4 font-bold hover:bg-accent-soft hover:text-text"
+    />
+  </div>
+
+  {carouselImages.length > 0 && (
+    <div class="mt-12">
+      <ImageCarousel images={carouselImages} client:load />
+    </div>
+  )}
+</section>
