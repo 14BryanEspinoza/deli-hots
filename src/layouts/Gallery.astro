@@ -1,0 +1,23 @@
+---
+import Products from "@components/Products.astro";
+import { data } from "@lib/api";
+
+const products = data.slice(38, 46);
+---
+
+<section class="px-8 py-24 text-text">
+  <h2 class="mb-4 text-center text-4xl font-bold">Menu</h2>
+  <p class="mx-auto mb-6 max-w-2xl text-center text-lg">
+    From the classic hot dog to fish and chips, every dish is prepared to order.
+    Find your favorite.
+  </p>
+  <div class="mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:px-12">
+    {products.length > 0 ? (
+      products.map((product) => <Products {...product} />)
+    ) : (
+      <p class="col-span-full py-6 text-center text-lg text-text">
+        No products found
+      </p>
+    )}
+  </div>
+</section>
