@@ -40,7 +40,7 @@ const { title } = Astro.props as Props;
 
     <title>{title}</title>
 
-    <ClientRouter transition:name="hero" />
+    <ClientRouter />
   </head>
   <body>
     <Link url="#main-content" label="Skip to Main Content" skip />

@@ -12,7 +12,7 @@ export const linkNavbar: LinksProps[] = [
     label: "Orders",
     icon: "lucide:shopping-cart-minus",
   },
-  { url: "#contact/", label: "Contact", icon: "lucide:message-circle-more" },
+  { url: "#contact", label: "Contact", icon: "lucide:message-circle-more" },
 ];
 
 export const socialNetworks: LinksProps[] = [
