@@ -31,7 +31,8 @@ const currentPath = Astro.url.pathname;
 >
   <ul role="list" class="md:flex md:items-center md:gap-8">
     {linkNavbar.map((link) => {
-      const isActive = currentPath === link.url;
+      const normalize = (path: string) => path.replace(/\/$/, "");
+      const isActive = normalize(currentPath) === normalize(link.url);
 
       return (
         <li>

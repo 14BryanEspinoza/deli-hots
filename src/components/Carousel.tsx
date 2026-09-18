@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import type { ImageProps } from "@lib/api";
@@ -11,10 +11,6 @@ export const ImageCarousel: React.FC<CarouselProps> = ({ images }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 2000 }),
   ]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-  }, [emblaApi]);
 
   return (
     <div className="relative mx-auto max-w-3xl">

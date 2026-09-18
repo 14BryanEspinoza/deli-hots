@@ -15,6 +15,6 @@ export const meta: MetaProps = {
   author: "14BryanEspinoza",
   title: "Deli's Hots",
   image:
-    "https://raw.githubusercontent.com/14BryanEspinoza/delis-hot/main/public/preview.png",
-  canonical: "https://14bryanespinoza.github.io/delis-hot/",
+    "https://raw.githubusercontent.com/14BryanEspinoza/deli-hots/main/public/preview.png",
+  canonical: "https://14bryanespinoza.github.io/deli-hots/",
 };
