@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://14bryanespinoza.github.io/delis-hot/sitemap.xml
