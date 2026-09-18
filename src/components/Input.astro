@@ -1,0 +1,34 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props {
+  id: string;
+  label: string;
+  type: HTMLAttributes<"input">["type"];
+  place?: string;
+  autocomplete?: HTMLAttributes<"input">["autocomplete"];
+  pattern?: string;
+  min?: number;
+}
+
+const { id, label, type, place, autocomplete, pattern, min } =
+  Astro.props as Props;
+---
+
+<div class="mx-4 mb-4">
+  <label class="mb-2 ml-4 block" for={id}>
+    {label}
+  </label>
+
+  <input
+    class="w-full rounded-md border bg-surface-alt px-6 py-2 text-text shadow-md transition placeholder:text-text-muted invalid:border-danger focus:border-accent"
+    type={type}
+    id={id}
+    name={id}
+    placeholder={place}
+    autocomplete={autocomplete}
+    pattern={pattern}
+    min={min}
+    required
+  />
+</div>
