@@ -1,0 +1,101 @@
+---
+import Input from "@components/Input.astro";
+import { data } from "@lib/api";
+
+const product = data.map((item) => ({
+  name: item.name,
+  price: item.price,
+}));
+---
+
+<form action="#" class="mx-8 my-24 lg:mx-auto lg:max-w-4xl" method="post">
+  <h1 class="text-center text-3xl font-bold">Place your order</h1>
+  <p class="mt-2 text-center text-text-muted">
+    Home delivery · No minimum purchase · Pay upon receipt
+  </p>
+
+  <fieldset class="my-6 rounded-md border border-border bg-surface p-4 shadow">
+    <legend class="text-lg">Personal Information</legend>
+
+    <Input
+      id="name"
+      label="Full Name"
+      type="text"
+      place="John Doe"
+      autocomplete="name"
+    />
+
+    <Input
+      id="tel"
+      label="Phone"
+      type="tel"
+      place="+505 1234-5678"
+      autocomplete="tel"
+      pattern="[+]?[0-9\s\(\)\-]{7,}"
+    />
+
+    <Input
+      id="address"
+      label="Delivery Address"
+      type="text"
+      place="Covisama II Etapa, Casa I-2-10"
+      autocomplete="street-address"
+    />
+  </fieldset>
+
+  <fieldset class="my-6 rounded-md border border-border bg-surface p-4 shadow">
+    <legend class="text-lg">Order Details</legend>
+
+    <div class="mx-4 mb-4">
+      <label class="mb-2 ml-4 block" for="product">
+        Product
+      </label>
+
+      <select
+        class="w-full rounded-md border bg-surface-alt px-6 py-2 text-text shadow-md transition placeholder:text-text-muted invalid:border-danger focus:border-accent"
+        id="product"
+        name="product"
+        required
+      >
+        <option value="" disabled selected>
+          Select a product
+        </option>
+        {product.map((item) => (
+          <option value={item.name}>
+            {item.name} - C${item.price}
+          </option>
+        ))}
+      </select>
+    </div>
+
+    <Input
+      id="amount"
+      label="Amount"
+      type="number"
+      place="1"
+      autocomplete="amount"
+      min={1}
+    />
+
+    <div class="mx-4 mb-4">
+      <label class="mb-2 ml-2 block" for="comments">
+        Comments
+      </label>
+
+      <textarea
+        class="w-full rounded-md border bg-surface-alt px-6 py-2 text-text shadow-md transition placeholder:text-text-muted invalid:border-danger focus:border-accent"
+        id="comments"
+        name="comments"
+        placeholder="Describe your product preferences."
+        rows="3"
+      ></textarea>
+    </div>
+  </fieldset>
+
+  <button
+    class="mt-4 w-full cursor-pointer rounded-md bg-accent p-4 font-bold text-bg hover:bg-accent-soft hover:text-text"
+    type="submit"
+  >
+    Place Order
+  </button>
+</form>

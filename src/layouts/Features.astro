@@ -1,0 +1,19 @@
+---
+import Cards from "@components/Cards.astro";
+import { features } from "@data/features";
+---
+
+<section class="bg-surface-alt px-8 py-24">
+  <h2 class="mx-auto max-w-2xl text-center text-3xl font-bold">
+    Why choose Delis Hots?
+  </h2>
+  <p class="mx-auto my-4 max-w-2xl text-center text-text-muted">
+    We take your food seriously: freshness, speed, and great prices with every
+    order.
+  </p>
+  <div class="mx-auto grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+    {features.map((item) => (
+      <Cards {...item} />
+    ))}
+  </div>
+</section>

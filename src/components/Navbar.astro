@@ -1,0 +1,44 @@
+---
+import { Picture } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Link from "@components/Link.astro";
+import { linkNavbar } from "@data/links";
+import favicon from "@assets/favicon.png";
+
+const currentPath = Astro.url.pathname;
+---
+
+<figure class="size-12">
+  <a href="/deli-hots/">
+    <Picture
+      src={favicon}
+      alt="page logo"
+      loading={"eager"}
+      formats={["avif", "webp"]}
+      priority
+    />
+  </a>
+</figure>
+
+<input type="checkbox" id="menu-toggle" class="peer hidden" />
+<label for="menu-toggle" aria-label="open menu">
+  <Icon name="lucide:menu" class="cursor-pointer text-3xl md:hidden" />
+</label>
+
+<nav
+  class="hidden h-[90dvh] w-full flex-col items-center justify-center peer-checked:flex md:flex md:h-auto md:w-auto"
+  aria-label="main"
+>
+  <ul role="list" class="md:flex md:items-center md:gap-8">
+    {linkNavbar.map((link) => {
+      const normalize = (path: string) => path.replace(/\/$/, "");
+      const isActive = normalize(currentPath) === normalize(link.url);
+
+      return (
+        <li>
+          <Link {...link} className="mt-12 md:mt-0" active={isActive} />
+        </li>
+      );
+    })}
+  </ul>
+</nav>

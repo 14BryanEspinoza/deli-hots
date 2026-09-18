@@ -1,14 +1,4 @@
-node_modules/
-.git/
-.github/
 dist/
-*.map
-*.lock
+.astro/
+node_modules/
 pnpm-lock.yaml
-*.svg
-*.png
-*.jpg
-*.jpeg
-*.webp
-*.avif
-*.ico
