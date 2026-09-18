@@ -34,7 +34,10 @@ import { linkNavbar, socialNetworks, linkOthers } from "@data/links";
         <ul class="flex flex-col items-start gap-8 lg:flex-row">
           {linkNavbar.map((link) => (
             <li>
-              <Link {...link} />
+              <Link
+                {...link}
+                className="hover:border-footer-text hover:text-footer-text hover:underline"
+              />
             </li>
           ))}
         </ul>
@@ -72,7 +75,11 @@ import { linkNavbar, socialNetworks, linkOthers } from "@data/links";
       <ul class="flex gap-12" role="list">
         {linkOthers.map((link) => (
           <li>
-            <Link url={link.url} label={link.label} />
+            <Link
+              url={link.url}
+              label={link.label}
+              className="hover:border-footer-text hover:text-footer-text hover:underline"
+            />
           </li>
         ))}
       </ul>
