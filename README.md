@@ -1,5 +1,7 @@
 # Deli's Hots
 
+![Deploy](https://github.com/14BryanEspinoza/deli-hots/actions/workflows/deploy.yml/badge.svg)
+
 > Landing page y aplicación de pedidos para el restaurante de comida rápida **Deli's Hots**, desarrollada con **Astro 7** (SSG + islas de React), Tailwind CSS v4, consumo de API REST externa y despliegue automático a GitHub Pages.
 
 ![Preview](/public/preview.png)
