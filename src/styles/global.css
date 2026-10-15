@@ -3,26 +3,26 @@
 @theme {
   --font-default: "JetBrains Mono", monospace;
 
-  --color-bg: #f8fafc;
+  --color-bg: #fafaf9;
   --color-surface: #ffffff;
-  --color-surface-alt: #f1f5f9;
+  --color-surface-alt: #f5f5f4;
 
-  --color-text: #0f172a;
-  --color-text-muted: #475569;
+  --color-text: #1c1917;
+  --color-text-muted: #78716c;
 
-  --color-border: #cbd5e1;
+  --color-border: #e7e5e4;
 
-  --color-accent: #ea580c;
-  --color-accent-hover: #c2410c;
-  --color-accent-soft: #ffedd5;
+  --color-accent: #e11d48;
+  --color-accent-hover: #be123c;
+  --color-accent-soft: #ffe4e6;
   --color-accent-contrast: #ffffff;
 
-  --color-danger: #dc2626;
-  --color-success: #16a34a;
+  --color-danger: #ef4444;
+  --color-success: #10b981;
 
-  --color-footer-bg: #0f172a;
-  --color-footer-text: #f8fafc;
-  --color-footer-muted: #94a3b8;
+  --color-footer-bg: #0c0a09;
+  --color-footer-text: #fafaf9;
+  --color-footer-muted: #a8a29e;
 }
 
 html {
