@@ -10,7 +10,7 @@ interface Props {
   active?: boolean;
 }
 
-const { url, label, className, skip, icon, active } = Astro.props as Props;
+const { url, label, className, skip, icon, active } = Astro.props;
 const baseStyle =
   "flex gap-2 items-center justify-center transition hover:scale-105 hover:text-accent-hover";
 const skipStyle =

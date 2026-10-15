@@ -5,10 +5,14 @@ interface LinksProps {
 }
 
 export const linkNavbar: LinksProps[] = [
-  { url: "/deli-hots/", label: "Inicio", icon: "lucide:house" },
-  { url: "/deli-hots/menu/", label: "Menú", icon: "lucide:utensils-crossed" },
+  { url: import.meta.env.BASE_URL, label: "Inicio", icon: "lucide:house" },
   {
-    url: "/deli-hots/orders/",
+    url: import.meta.env.BASE_URL + "menu/",
+    label: "Menú",
+    icon: "lucide:utensils-crossed",
+  },
+  {
+    url: import.meta.env.BASE_URL + "orders/",
     label: "Pedidos",
     icon: "lucide:shopping-cart-minus",
   },

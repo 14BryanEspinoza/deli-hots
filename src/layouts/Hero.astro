@@ -1,6 +1,6 @@
 ---
-import Link from "@components/Link.astro";
 import { ImageCarousel } from "@components/Carousel";
+import Link from "@components/Link.astro";
 import { data } from "@lib/api";
 
 const images = data.map((item) => ({
@@ -22,13 +22,13 @@ const carouselImages = images.slice(35, 59);
 
   <div class="flex flex-wrap justify-center gap-8">
     <Link
-      url="/deli-hots/menu/"
+      url={import.meta.env.BASE_URL + "menu/"}
       label="Ver menú"
       icon="lucide:arrow-right"
       className="rounded-md bg-accent p-4 font-bold text-bg hover:bg-accent-soft hover:text-text"
     />
     <Link
-      url="/deli-hots/orders/"
+      url={import.meta.env.BASE_URL + "orders/"}
       label="¡Haz tu pedido ahora!"
       icon="lucide:arrow-right"
       className="rounded-md border border-border p-4 font-bold hover:bg-accent-soft hover:text-text"
