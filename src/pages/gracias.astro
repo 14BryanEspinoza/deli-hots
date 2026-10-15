@@ -1,0 +1,24 @@
+---
+import Layouts from "@layouts/Layouts.astro";
+import Footer from "@layouts/Footer.astro";
+import Link from "@components/Link.astro";
+---
+
+<Layouts title="Deli-Hots | Pedido enviado">
+  <main id="main-content">
+    <section class="px-8 py-24 text-center text-text">
+      <h1 class="mb-4 text-4xl font-bold">¡Pedido enviado!</h1>
+      <p class="mx-auto mb-6 max-w-2xl text-lg">
+        Gracias por tu pedido. Te contactaremos pronto para confirmar la
+        entrega.
+      </p>
+      <Link
+        url={import.meta.env.BASE_URL + "menu/"}
+        label="Volver al menú"
+        icon="lucide:arrow-right"
+        className="rounded-md bg-accent p-4 font-bold text-bg hover:bg-accent-soft hover:text-text"
+      />
+    </section>
+  </main>
+  <Footer />
+</Layouts>

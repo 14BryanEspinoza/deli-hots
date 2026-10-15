@@ -6,10 +6,22 @@ const product = data.map((item) => ({
   name: item.name,
   price: item.price,
 }));
+
+const thankYouUrl = Astro.site
+  ? new URL(import.meta.env.BASE_URL + "gracias/", Astro.site).href
+  : import.meta.env.BASE_URL + "gracias/";
 ---
 
-<form action="#" class="mx-8 my-24 lg:mx-auto lg:max-w-4xl" method="post">
+<form
+  action="https://formsubmit.co/14bryespinoza@gmail.com"
+  class="mx-8 my-24 lg:mx-auto lg:max-w-4xl"
+  method="post"
+>
+  <input type="hidden" name="_next" value={thankYouUrl} />
+  <input type="hidden" name="_subject" value="Nuevo pedido - Deli's Hots" />
+
   <h1 class="text-center text-3xl font-bold">Haz tu pedido</h1>
+
   <p class="mt-2 text-center text-text-muted">
     Entrega a domicilio · Sin compra mínima · Paga al recibir
   </p>
