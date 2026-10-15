@@ -1,15 +1,13 @@
 ---
 interface Props {
-  init?: number;
-  final?: number;
+  products?: DataProps[];
 }
 
 import Products from "@components/Products.astro";
 import { data } from "@lib/api";
+import type { DataProps } from "@lib/api";
 
-const { init, final } = Astro.props as Props;
-
-const products = data.slice(init, final);
+const { products = data } = Astro.props as Props;
 ---
 
 <section class="px-8 py-24 text-text">

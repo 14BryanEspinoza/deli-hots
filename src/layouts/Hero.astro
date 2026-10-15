@@ -3,13 +3,14 @@ import { ImageCarousel } from "@components/Carousel";
 import Link from "@components/Link.astro";
 import { data } from "@lib/api";
 import { getCarouselImages } from "@lib/images";
+import { pickCarousel } from "@lib/selection";
 
-const images = data.map((item) => ({
-  url: item.image,
-  alt: item.name,
-}));
-
-const carouselImages = await getCarouselImages(images.slice(35, 59));
+const carouselImages = await getCarouselImages(
+  pickCarousel(data).map((item) => ({
+    url: item.image,
+    alt: item.name,
+  })),
+);
 ---
 
 <section class="px-8 py-24 text-center text-text">

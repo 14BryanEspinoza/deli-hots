@@ -17,12 +17,19 @@ const currentPath = Astro.url.pathname;
   </a>
 </figure>
 
-<input type="checkbox" id="menu-toggle" class="peer hidden" />
-<label for="menu-toggle" aria-label="abrir menú">
-  <Icon name="lucide:menu" class="cursor-pointer text-3xl md:hidden" />
-</label>
+<button
+  type="button"
+  id="menu-toggle"
+  class="lg:hidden"
+  aria-expanded="false"
+  aria-controls="nav-main"
+  aria-label="menú de navegación"
+>
+  <Icon name="lucide:menu" class="cursor-pointer text-3xl" aria-hidden="true" />
+</button>
 
 <nav
+  id="nav-main"
   class="hidden h-[90dvh] w-full flex-col items-center justify-center peer-checked:flex md:flex md:h-auto md:w-auto"
   aria-label="navegación principal"
 >
@@ -39,3 +46,32 @@ const currentPath = Astro.url.pathname;
     })}
   </ul>
 </nav>
+
+<script>
+  const btn = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-main");
+
+  let open = false;
+
+  const setOpen = (next: boolean) => {
+    open = next;
+
+    btn?.setAttribute("aria-expanded", String(open));
+
+    nav?.classList.toggle("hidden", !open);
+    nav?.classList.toggle("flex", open);
+  };
+
+  btn?.addEventListener("click", () => setOpen(!open));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && open) {
+      setOpen(false);
+      btn?.focus();
+    }
+  });
+
+  nav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+</script>
