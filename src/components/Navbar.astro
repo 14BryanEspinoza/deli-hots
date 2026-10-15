@@ -1,12 +1,12 @@
 ---
 import { Icon } from "astro-icon/components";
-import Link from "@components/Link.astro";
 import { linkNavbar } from "@data/links";
+import Link from "@components/Link.astro";
 
 const currentPath = Astro.url.pathname;
 ---
 
-<figure class="size-12">
+<figure class="size-10">
   <a href={import.meta.env.BASE_URL}>
     <img
       src={import.meta.env.BASE_URL + "favicon.png"}
@@ -20,7 +20,7 @@ const currentPath = Astro.url.pathname;
 <button
   type="button"
   id="menu-toggle"
-  class="lg:hidden"
+  class="md:hidden"
   aria-expanded="false"
   aria-controls="nav-main"
   aria-label="menú de navegación"
@@ -30,7 +30,7 @@ const currentPath = Astro.url.pathname;
 
 <nav
   id="nav-main"
-  class="hidden h-[90dvh] w-full flex-col items-center justify-center peer-checked:flex md:flex md:h-auto md:w-auto"
+  class="hidden h-[90dvh] w-full flex-col items-center justify-center md:flex md:h-auto md:w-auto"
   aria-label="navegación principal"
 >
   <ul role="list" class="md:flex md:items-center md:gap-8">

@@ -4,24 +4,25 @@ import { Icon } from "astro-icon/components";
 interface Props {
   url: string;
   label?: string;
-  skip?: boolean;
   icon?: string;
-  className?: string;
   active?: boolean;
+  skip?: boolean;
+  className?: string;
 }
 
-const { url, label, className, skip, icon, active } = Astro.props;
 const baseStyle =
   "flex gap-2 items-center justify-center transition hover:scale-105 hover:text-accent-hover";
 const skipStyle =
-  "absolute top-0 left-4 z-50 -translate-y-12 px-6 py-2 rounded-md font-bold text-text bg-accent-soft transition focus:translate-y-4";
-const activeStyle = "font-bold text-accent border-b-2 border-accent";
+  "sr-only text-bg transition focus:not-sr-only focus:absolute focus:top-8 focus:left-6 focus:z-50 focus:px-6 focus:py-2 focus:rounded-md focus:font-bold focus:bg-accent ";
+const activeStyle = "font-bold text-success border-b-2 border-success";
+
+const { url, label, icon, active, skip, className = "" } = Astro.props;
 ---
 
 <a
   href={url}
   class={`${skip ? skipStyle : baseStyle} ${className} ${active ? activeStyle : ""}`}
 >
-  {icon && <Icon name={icon} class="text-xl" />}
+  {icon && <Icon name={icon} class="text-lg" />}
   {label}
 </a>
