@@ -9,6 +9,9 @@ import react from "@astrojs/react";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ["embla-carousel-react", "embla-carousel-autoplay"],
+    },
   },
 
   integrations: [icon(), sitemap(), react()],
