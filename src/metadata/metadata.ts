@@ -9,9 +9,9 @@ interface MetaProps {
 
 export const meta: MetaProps = {
   description:
-    "Deli's Hots – fast food with fresh ingredients. Burgers, pizzas, hot dogs, tacos, and more, ready in minutes.",
+    "Deli's Hots – comida rápida con ingredientes frescos. Hamburguesas, pizzas, hot dogs, tacos y más, listos en minutos.",
   keywords:
-    "Fast food, Hamburgers, Pizzas, Hot dogs, Tacos, Deli-style hot dogs",
+    "comida rápida, hamburguesas, pizzas, hot dogs, tacos, hot dogs de la calle, Managua, Nicaragua",
   author: "14BryanEspinoza",
   title: "Deli's Hots",
   image:

@@ -12,7 +12,7 @@ const currentPath = Astro.url.pathname;
   <a href="/deli-hots/">
     <Picture
       src={favicon}
-      alt="page logo"
+      alt="Logo de la página"
       loading={"eager"}
       formats={["avif", "webp"]}
       priority
@@ -21,13 +21,13 @@ const currentPath = Astro.url.pathname;
 </figure>
 
 <input type="checkbox" id="menu-toggle" class="peer hidden" />
-<label for="menu-toggle" aria-label="open menu">
+<label for="menu-toggle" aria-label="abrir menú">
   <Icon name="lucide:menu" class="cursor-pointer text-3xl md:hidden" />
 </label>
 
 <nav
   class="hidden h-[90dvh] w-full flex-col items-center justify-center peer-checked:flex md:flex md:h-auto md:w-auto"
-  aria-label="main"
+  aria-label="navegación principal"
 >
   <ul role="list" class="md:flex md:items-center md:gap-8">
     {linkNavbar.map((link) => {

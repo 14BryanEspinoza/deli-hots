@@ -5,14 +5,14 @@ interface LinksProps {
 }
 
 export const linkNavbar: LinksProps[] = [
-  { url: "/deli-hots/", label: "Home", icon: "lucide:house" },
-  { url: "/deli-hots/menu/", label: "Menu", icon: "lucide:utensils-crossed" },
+  { url: "/deli-hots/", label: "Inicio", icon: "lucide:house" },
+  { url: "/deli-hots/menu/", label: "Menú", icon: "lucide:utensils-crossed" },
   {
     url: "/deli-hots/orders/",
-    label: "Orders",
+    label: "Pedidos",
     icon: "lucide:shopping-cart-minus",
   },
-  { url: "#contact", label: "Contact", icon: "lucide:message-circle-more" },
+  { url: "#contact", label: "Contacto", icon: "lucide:message-circle-more" },
 ];
 
 export const socialNetworks: LinksProps[] = [
@@ -35,7 +35,7 @@ export const socialNetworks: LinksProps[] = [
 ];
 
 export const linkOthers: LinksProps[] = [
-  { url: "#", label: "Terms" },
-  { url: "#", label: "Privacy" },
+  { url: "#", label: "Términos" },
+  { url: "#", label: "Privacidad" },
   { url: "#", label: "Cookies" },
 ];

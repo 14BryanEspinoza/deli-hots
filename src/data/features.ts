@@ -6,27 +6,27 @@ interface FeaturesProps {
 
 export const features: FeaturesProps[] = [
   {
-    title: "Fresh ingredients",
+    title: "Ingredientes frescos",
     description:
-      "We select the best ingredients every day so that every dish delivers authentic flavor.",
+      "Seleccionamos los mejores ingredientes cada día para que cada plato tenga un sabor auténtico.",
     icon: "lucide:trees",
   },
   {
-    title: "Fast delivery",
+    title: "Entrega rápida",
     description:
-      " Get your order hot and in record time, delivered straight to your door.",
+      "Recibe tu pedido caliente y en tiempo récord, directo a tu puerta.",
     icon: "lucide:zap",
   },
   {
-    title: "Fair price",
+    title: "Precio justo",
     description:
-      "Quality food at affordable prices, with no surprises or hidden charges.",
+      "Comida de calidad a precios accesibles, sin sorpresas ni cargos ocultos.",
     icon: "lucide:tag",
   },
   {
-    title: "Wide variety",
+    title: "Gran variedad",
     description:
-      "Hot dogs, hamburgers, pizzas, tacos, and more. There’s always something to satisfy your craving.",
+      "Hot dogs, hamburguesas, pizzas, tacos y más. Siempre hay algo para satisfacer tus antojos.",
     icon: "lucide:grid-2x2",
   },
 ];

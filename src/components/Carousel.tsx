@@ -32,17 +32,17 @@ export const ImageCarousel: React.FC<CarouselProps> = ({ images }) => {
       <div className="mt-4 flex justify-center gap-4">
         <button
           onClick={() => emblaApi?.scrollPrev()}
-          className="cursor-pointer rounded-md border border-border px-4 py-2 font-bold text-text transition hover:bg-accent-soft hover:text-text"
-          aria-label="Previous"
+          className="border-border text-text hover:bg-accent-soft hover:text-text cursor-pointer rounded-md border px-4 py-2 font-bold transition"
+          aria-label="Anterior"
         >
-          ← Previous
+          ← Anterior
         </button>
         <button
           onClick={() => emblaApi?.scrollNext()}
-          className="cursor-pointer rounded-md border border-border px-4 py-2 font-bold text-text transition hover:bg-accent-soft hover:text-text"
-          aria-label="Next"
+          className="border-border text-text hover:bg-accent-soft hover:text-text cursor-pointer rounded-md border px-4 py-2 font-bold transition"
+          aria-label="Siguiente"
         >
-          Next →
+          Siguiente →
         </button>
       </div>
     </div>
