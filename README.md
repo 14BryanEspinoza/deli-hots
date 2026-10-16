@@ -52,7 +52,7 @@ pnpm build          # Build de producción
 
 - **Astro 7 (SSG)** — HTML estático por página con View Transitions (`<ClientRouter />`).
 - **React 19 + Embla Carousel** — única isla de React: carrusel con autoplay, loop, navegación táctil y **botón de pausa**.
-- **Tailwind CSS v4 (CSS-first)** — configuración vía `@theme` con design tokens y tipografía monospace personalizados.
+- **Tailwind CSS v4 (CSS-first)** — configuración vía `@theme` con design tokens y tipografía JetBrains Mono (cargada desde Google Fonts con `display=swap`).
 - **API REST en build time** — catálogo de `https://devsapihub.com/api-fast-food` consultado al construir y validado con **Zod**: si la API cambia de esquema o responde mal, el build falla en vez de publicar un menú vacío.
 - **Selección por criterio** — `pickFeatured` (destacados: 1 producto por categoría) y `pickCarousel` (round-robin para el carrusel) en `src/lib/selection.ts`, sin índices mágicos.
 - **Formulario de pedidos sin backend** — POST a [FormSubmit.co](https://formsubmit.co) que llega al correo del restaurante y redirige a `/gracias/`.
@@ -210,8 +210,7 @@ URL final: **<https://14bryanespinoza.github.io/deli-hots/>**
 ## ⚠️ Limitaciones conocidas
 
 - Los enlaces legales del pie (Términos, Privacidad, Cookies) apuntan a `#`: son placeholders hasta que existan esas páginas.
-- La home renderiza dos `<h1>` (el del sitio y el de la sección Menú); `/menu/`, `/orders/` y `/gracias/` tienen uno solo.
-- JetBrains Mono se declara en el CSS pero no se descarga: sin esa fuente instalada en el sistema se usa la monospace por defecto.
+- La página `/menu/` no tiene `<h1>`: `Gallery` renderiza su título como `<h2>` (así la home queda con uno solo) y esa ruta no define encabezado propio.
 
 ---
 
