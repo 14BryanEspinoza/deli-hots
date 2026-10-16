@@ -1,0 +1,42 @@
+---
+import { Icon } from "astro-icon/components";
+
+import Layout from "@layouts/Layouts.astro";
+import Footer from "@layouts/Footer.astro";
+---
+
+<Layout title="Error 404">
+  <main
+    id="main-content"
+    class="bg-bg flex min-h-[calc(100vh-160px)] items-center justify-center p-4 md:p-8"
+  >
+    <section class="border-border bg-surface flex w-full max-w-2xl flex-col items-center rounded-md border p-8 text-center">
+      <div class="relative z-10 my-6 flex w-full items-center justify-center py-6">
+        <div class="bg-accent absolute h-24 w-40 -translate-x-2 translate-y-5 -rotate-3 rounded-xs"></div>
+        <h1 class="text-text relative z-10 text-7xl font-black tracking-tight sm:text-9xl">
+          404
+        </h1>
+      </div>
+
+      <div class="relative z-10 max-w-md">
+        <h2 class="text-text mb-3 text-2xl font-bold tracking-tight">
+          Página no encontrada
+        </h2>
+
+        <p class="text-text-muted mb-8 leading-relaxed">
+          Lo sentimos, la página que buscas no existe, ha sido eliminada o
+          cambió de dirección.
+        </p>
+
+        <a
+          href={import.meta.env.BASE_URL}
+          class="bg-accent text-white active:bg-accent-hover inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold shadow-md transition hover:scale-105"
+        >
+          <Icon name="lucide:home" class="size-5" />
+          Volver al Inicio
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
