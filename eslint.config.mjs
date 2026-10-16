@@ -35,7 +35,7 @@ export default [
       ],
 
       "astro/no-set-html-directive": "error",
-      "tailwindcss/classnames-order": "warn",
+      "tailwindcss/classnames-order": "off",
       "tailwindcss/no-custom-classname": "off",
     },
   },

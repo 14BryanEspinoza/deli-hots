@@ -1,4 +1,7 @@
 ---
+import { data } from "@lib/api";
+import { pickFeatured } from "@lib/selection";
+
 import Layouts from "@layouts/Layouts.astro";
 import Hero from "@layouts/Hero.astro";
 import Features from "@layouts/Features.astro";
@@ -10,7 +13,7 @@ import Footer from "@layouts/Footer.astro";
   <main id="main-content">
     <Hero />
     <Features />
-    <Gallery init={38} final={46} />
+    <Gallery products={pickFeatured(data)} />
   </main>
   <Footer />
 </Layouts>
