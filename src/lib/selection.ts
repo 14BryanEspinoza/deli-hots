@@ -1,6 +1,6 @@
 import type { DataProps } from "@lib/api";
 
-const FEATURED_LIMIT = 16;
+const FEATURED_LIMIT = 8;
 const CAROUSEL_LIMIT = 24;
 
 export function pickFeatured(
