@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
+import type { CarouselImage } from "@lib/images";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import type { CarouselImage } from "@lib/images";
 
 interface CarouselProps {
   images: CarouselImage[];
@@ -10,7 +10,7 @@ interface CarouselProps {
 export const ImageCarousel: React.FC<CarouselProps> = ({ images }) => {
   const autoplay = useRef(
     Autoplay({
-      delay: 2000,
+      delay: 3000,
       stopOnInteraction: false,
       stopOnMouseEnter: true,
     }),
@@ -20,8 +20,6 @@ export const ImageCarousel: React.FC<CarouselProps> = ({ images }) => {
   ]);
   const [isPlaying, setIsPlaying] = useState(true);
 
-  // Keep the toggle in sync with every plugin state change (hover pause,
-  // focus stop, reduced motion) instead of tracking it by hand.
   useEffect(() => {
     if (!emblaApi) return;
 
@@ -34,7 +32,6 @@ export const ImageCarousel: React.FC<CarouselProps> = ({ images }) => {
     };
   }, [emblaApi]);
 
-  // Respect the OS/user reduced-motion preference: do not auto-advance.
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       autoplay.current.stop();
@@ -54,8 +51,8 @@ export const ImageCarousel: React.FC<CarouselProps> = ({ images }) => {
   };
 
   return (
-    <div className="relative mx-auto max-w-3xl">
-      <div className="overflow-hidden rounded-xl" ref={emblaRef}>
+    <div className="relative mx-auto max-w-4xl">
+      <div className="overflow-hidden rounded-md" ref={emblaRef}>
         <div className="flex">
           {images.map((img, index) => (
             <div
@@ -93,23 +90,25 @@ export const ImageCarousel: React.FC<CarouselProps> = ({ images }) => {
         <button
           type="button"
           onClick={() => emblaApi?.scrollPrev()}
-          className="border-border text-text hover:bg-accent-soft hover:text-text cursor-pointer rounded-md border px-4 py-2 font-bold transition"
+          className="text-bg bg-accent hover:bg-accent-hover hover:text-bg cursor-pointer rounded-md px-4 py-2 transition hover:scale-105"
           aria-label="Anterior"
         >
           ← Anterior
         </button>
+
         <button
           type="button"
           onClick={togglePlayback}
-          className="border-border text-text hover:bg-accent-soft hover:text-text cursor-pointer rounded-md border px-4 py-2 font-bold transition"
+          className="text-bg bg-accent hover:bg-accent-hover hover:text-bg cursor-pointer rounded-md px-4 py-2 transition hover:scale-105"
           aria-label={isPlaying ? "Pausar carrusel" : "Reanudar carrusel"}
         >
           {isPlaying ? "⏸ Pausar" : "▶ Reproducir"}
         </button>
+
         <button
           type="button"
           onClick={() => emblaApi?.scrollNext()}
-          className="border-border text-text hover:bg-accent-soft hover:text-text cursor-pointer rounded-md border px-4 py-2 font-bold transition"
+          className="text-bg bg-accent hover:bg-accent-hover hover:text-bg cursor-pointer rounded-md px-4 py-2 transition hover:scale-105"
           aria-label="Siguiente"
         >
           Siguiente →

@@ -1,5 +1,5 @@
-import { getImage } from "astro:assets";
 import sharp from "sharp";
+import { getImage } from "astro:assets";
 import type { ImageProps } from "@lib/api";
 
 export interface CarouselImage {
@@ -16,12 +16,6 @@ const MAX_FALLBACK_WIDTH = 1280;
 
 const dimensionsCache = new Map<string, { width: number; height: number }>();
 
-/**
- * astro:assets getImage requires explicit width and height for remote
- * images (there is no inferSize helper for the imperative API), so the
- * intrinsic dimensions are read once per URL with sharp before asking
- * Astro to generate the responsive variants.
- */
 async function getRemoteDimensions(
   url: string,
 ): Promise<{ width: number; height: number }> {
@@ -47,11 +41,6 @@ async function getRemoteDimensions(
   return dimensions;
 }
 
-/**
- * Pre-optimizes the remote carousel images at build time (responsive
- * AVIF + WebP and a JPEG fallback) so the React island only receives
- * URLs already processed by astro:assets.
- */
 export async function getCarouselImages(
   images: ImageProps[],
 ): Promise<CarouselImage[]> {
@@ -59,7 +48,6 @@ export async function getCarouselImages(
     images.map(async ({ url, alt }) => {
       const dimensions = await getRemoteDimensions(url);
 
-      // Never ask for variants wider than the source to avoid upscaling.
       const widths = RESPONSIVE_WIDTHS.filter((w) => w < dimensions.width);
       if (widths.length === 0) widths.push(dimensions.width);
 
